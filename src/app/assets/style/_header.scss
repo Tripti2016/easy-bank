@@ -1,0 +1,215 @@
+.header {
+  background-color: $Very-Light-Gray;
+  padding: 160px;
+  margin-top: 72px;
+  @media (max-width:1098px) {
+    padding: 42px 0;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    @media(max-width:1098px){
+      flex-direction:column-reverse;
+    }
+    .header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 39%;
+      @media (max-width:1098px) {
+        max-width: 100%;
+        padding: 16px;
+        text-align: center;
+        align-items: center;
+      }
+      h1 {
+        @include head-text(60px);
+        @media (max-width:768px) {
+          font-size: 42px;
+
+        }
+      }
+      p {
+        @include sub-text(20px);
+        @media (max-width:768px) {
+          font-size: 18px;
+        }
+      }
+      .request-btn {
+        width: fit-content;
+        button {
+          @include request-btn;
+        }
+      }
+    }
+    .header-right {
+      width: 50%;
+      transform: translateY(-20%);
+      @media(max-width:1098px){
+        transform: translateY(0);
+        width:100%;
+      }
+      .right-img {
+        position: absolute;
+        width: 113%;
+        transform: translateY(-19%);
+        height: 204%;
+        @media(max-width:1098px){
+          position : static;
+        }
+        .bg-img {
+          position: absolute;
+          // width: 163%;
+          /* overflow: auto; */
+          height: 115%;
+          top: -20%;
+          right: -47%;
+          z-index: 1;
+          @media(max-width:1098px){
+            position: static;
+          }
+          img {
+            width: 1000px;
+          }
+          .desktop-bg{
+            @media(max-width:1098px){
+              display:none;
+            }
+          }
+          .mobile-bg{
+            display:none;
+            @media(max-width:1098px){
+              display:block
+            }
+          }
+        }
+        .up-img {
+          position: absolute;
+          width: 115%;
+          /* overflow: auto; */
+          height: 145%;
+          top: -15%;
+          right: -42%;
+          z-index: 1;
+          @media (max-width:1098px) {
+            right: 0;
+            width: 80%;
+            height: 100%;
+            left: 0;
+            padding: 24px;
+            top: -17%;
+          }
+          img {
+            aspect-ratio: 1/2;
+            width: 1000px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.easy-section {
+  background-color: $Light-Grayish-Blue;
+  .easy-head-title {
+    margin-bottom: 32px;
+    max-width: 50%;
+    @media (max-width:768px) {
+      max-width: 100%;
+      text-align: center;
+    }
+    h1 {
+      @include head-text(36px);
+      margin-bottom: 24px;
+      @media (max-width:768px) {
+        font-size: 20px;
+      }
+    }
+    p {
+      @include sub-text(18px);
+      @media (max-width:768px) {
+        font-size: 14px;
+      }
+    }
+  }
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 4fr));
+    gap: 16px;
+    .easy-item {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+@media (max-width:768px) {
+  align-items: center;
+}
+      h3 {
+        @include head-text(24px);
+        @media (max-width:768px) {
+          font-size: 20px;
+        }
+      }
+      p {
+        @include sub-text(16px);
+        @media (max-width:768px) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+.articals {
+  background-color: $Very-Light-Gray;
+  .section-title {
+    h1 {
+      @include head-text(36px);
+    }
+  }
+  .artical-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 4fr));
+    grid-gap: 24px;
+    margin-top: 32px;
+    .artical-box {
+      background-color: $White;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+      .artical-img {
+        width: 100%;
+        img {
+          height: 250px;
+        }
+      }
+      .artical-content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px;
+        .writer {
+          @include sub-text(12px);
+        }
+        h4 {
+          a {
+            @include head-text(24px);
+            @media (max-width:768px) {
+              font-size: 20px;
+            }
+            &:hover {
+              color: $Bright-Cyan;
+              cursor: pointer;
+            }
+          }
+        }
+        p {
+          @include sub-text(18px);
+          @media (max-width:768px) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
